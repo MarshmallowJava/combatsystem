@@ -1,15 +1,12 @@
 package rpg.combat.skill.effect;
 
-import rpg.combat.skill.effect.condition.ConditionEffect;
+import rpg.combat.skill.effect.condition.EffectCondition;
 import rpg.main.Dialogue;
 
-public abstract class Effect {
-
-    //名前
-    public String name;
+public abstract class SkillEffect {
 
     //条件
-    public ConditionEffect condition;
+    public EffectCondition condition;
 
     //テンプレート出力
     public void print(){

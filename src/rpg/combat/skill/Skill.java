@@ -3,7 +3,7 @@ package rpg.combat.skill;
 import java.util.ArrayList;
 import java.util.List;
 
-import rpg.combat.skill.effect.Effect;
+import rpg.combat.skill.effect.SkillEffect;
 import rpg.combat.unit.Unit;
 import rpg.main.Dialogue;
 
@@ -16,7 +16,10 @@ public class Skill {
     public int costR, costG, costB;
 
     //スキル効果
-    public List<Effect> effects = new ArrayList<>();
+    public List<SkillEffect> effects = new ArrayList<>();
+
+    //カプセル化
+    Skill(){}
 
     public void print(Unit unit){
         Dialogue.print(true, String.format(

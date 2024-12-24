@@ -1,9 +1,7 @@
 package rpg.main;
 
 import rpg.combat.Combat;
-import rpg.combat.skill.Skill;
-import rpg.combat.skill.effect.EffectDealDamage;
-import rpg.combat.skill.effect.condition.ConditionEffect;
+import rpg.combat.skill.SkillFactory;
 import rpg.combat.unit.Group;
 import rpg.combat.unit.Unit;
 import rpg.combat.unit.UnitPlayer;
@@ -21,12 +19,7 @@ public class Main{
             unit.group = Group.ALLY;
             unit.speed = 50;
             unit.actcost = 100;
-
-            Skill skill = new Skill();
-            skill.name = "通常攻撃";
-            skill.costR = skill.costG = skill.costR = 0;
-            skill.effects.add(new EffectDealDamage(100, ConditionEffect.ONHIT));
-            unit.skills.add(skill);
+            unit.skills.add(SkillFactory.createSkillFromString("通常攻撃/0/0/0/deal_dmg,on_hit,100"));
 
             combat.units.add(unit);
         }
